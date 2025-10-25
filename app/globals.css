@@ -36,13 +36,18 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* 훗카이도 여행 프로젝트 커스텀 색상 */
+  --sky-blue: #5BA4CF;
+  --accent-orange: #FF8A5B;
+  --ice-blue: #E8F4F8;
+  --deep-navy: #2C4A5E;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -76,6 +81,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* 훗카이도 여행 프로젝트 커스텀 색상 매핑 */
+  --color-sky-blue: var(--sky-blue);
+  --color-accent-orange: var(--accent-orange);
+  --color-ice-blue: var(--ice-blue);
+  --color-deep-navy: var(--deep-navy);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,10 +96,14 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 .dark {
