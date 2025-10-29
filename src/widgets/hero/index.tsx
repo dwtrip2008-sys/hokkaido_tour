@@ -8,6 +8,8 @@ import Autoplay from "embla-carousel-autoplay";
 
 const heroImages = [
   "/images/image1.jpg",
+  "/images/image2.jpg",
+  "/images/image3.jpg",
   "/images/image32.jpeg", // 시코츠 호수
   "/images/image45.jpeg", // 삿포로 시계대
   "/images/image42.jpeg", // 오오도리 공원
@@ -46,7 +48,7 @@ export function Hero() {
       </div>
 
       {/* Gradient Overlay - 상단에서 하단으로 자연스러운 그라데이션 */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/60" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-start px-5 pt-8 text-center lg:pt-0">
