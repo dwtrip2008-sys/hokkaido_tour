@@ -7,7 +7,8 @@ import {
   AccordionTrigger,
 } from '@/shared/ui/accordion';
 import { Separator } from '@/shared/ui/separator';
-import { schedules } from '@/shared/constants/travel-data';
+import { schedules, flights } from '@/shared/constants/travel-data';
+import { Plane } from 'lucide-react';
 
 export function ScheduleSection() {
   return (
@@ -17,6 +18,63 @@ export function ScheduleSection() {
         <h2 className="mb-10 text-center text-3xl font-bold text-deep-navy lg:mb-14 lg:text-4xl">
           일정표
         </h2>
+
+        {/* Flight Information */}
+        <div className="mb-10 lg:mb-14">
+          <div className="mb-5 flex items-center gap-2 lg:mb-6">
+            <Plane className="h-5 w-5 text-sky-blue lg:h-6 lg:w-6" />
+            <h3 className="text-xl font-bold text-deep-navy lg:text-2xl">항공편 안내</h3>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
+            {flights.map((flight) => (
+              <div
+                key={flight.origin}
+                className="rounded-lg border border-gray-300 bg-white p-5 shadow-sm lg:p-6"
+              >
+                {/* Header */}
+                <div className="mb-4 flex items-center justify-between border-b border-gray-200 pb-3">
+                  <h4 className="text-lg font-bold text-deep-navy lg:text-xl">
+                    {flight.origin} 출발
+                  </h4>
+                  <span className="rounded-full bg-sky-blue/10 px-3 py-1 text-sm font-semibold text-sky-blue lg:px-4 lg:text-base">
+                    {flight.airline}
+                  </span>
+                </div>
+
+                {/* Outbound Flight */}
+                <div className="mb-4 rounded-md bg-ice-blue/30 p-4">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="text-sm font-semibold text-gray-600 lg:text-base">출발</span>
+                    <span className="text-sm text-gray-600 lg:text-base">{flight.outbound.date}</span>
+                  </div>
+                  <div className="mb-1 text-base font-bold text-deep-navy lg:text-lg">
+                    {flight.outbound.departure} → {flight.outbound.arrival}
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-700 lg:text-base">
+                    <span>{flight.outbound.time}</span>
+                    <span className="text-sky-blue font-semibold">{flight.outbound.flightNumber}</span>
+                  </div>
+                </div>
+
+                {/* Inbound Flight */}
+                <div className="rounded-md bg-gray-50 p-4">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="text-sm font-semibold text-gray-600 lg:text-base">도착</span>
+                    <span className="text-sm text-gray-600 lg:text-base">{flight.inbound.date}</span>
+                  </div>
+                  <div className="mb-1 text-base font-bold text-deep-navy lg:text-lg">
+                    {flight.inbound.departure} → {flight.inbound.arrival}
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-700 lg:text-base">
+                    <span>{flight.inbound.time}</span>
+                    <span className="text-sky-blue font-semibold">{flight.inbound.flightNumber}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Mobile: Accordion */}
         <div className="lg:hidden">

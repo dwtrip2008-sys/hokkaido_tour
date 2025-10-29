@@ -49,24 +49,36 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-start px-5 pt-8 text-center lg:pt-0">
+        {/* 로고 */}
+        <div className="mb-3 overflow-hidden">
+          <Image
+            src="/images/logo.png"
+            width={240}
+            height={240}
+            alt="IFC Logo"
+            className="h-36 w-45 object-cover object-center lg:h-44 lg:w-55"
+            priority
+          />
+        </div>
+
         {/* 상단 라벨 */}
-        <div className="mb-8 inline-block rounded-full border border-white/30 bg-white/10 px-6 py-2 backdrop-blur-sm lg:mb-10">
+        <div className="mb-5 inline-block rounded-full border border-white/30 bg-white/10 px-6 py-2 backdrop-blur-sm lg:mb-6">
           <p className="text-sm font-medium tracking-wider text-white/90 lg:text-base">
             HOKKAIDO TOUR 2025
           </p>
         </div>
 
         {/* 메인 타이틀 */}
-        <h1 className="mb-4 text-5xl font-semibold tracking-wide text-white lg:mb-5 lg:text-7xl lg:tracking-wider">
+        <h1 className="mb-3 text-5xl font-semibold tracking-wide text-white lg:mb-4 lg:text-7xl lg:tracking-wider">
           HOKKAIDO
         </h1>
-        <h2 className="mb-8 text-2xl font-light tracking-widest text-white/90 lg:mb-10 lg:text-3xl">
+        <h2 className="mb-5 text-2xl font-light tracking-widest text-white/90 lg:mb-6 lg:text-3xl">
           PREMIUM TOUR
         </h2>
 
         {/* 구분선 */}
-        <div className="mb-6 h-px w-20 bg-white/40 lg:mb-8 lg:w-24" />
+        <div className="mb-4 h-px w-20 bg-white/40 lg:mb-5 lg:w-24" />
 
         {/* 여행 기간 */}
         <p className="mb-1 text-sm font-light tracking-wide text-white/70 lg:text-base">
@@ -97,7 +109,7 @@ export function Hero() {
         {/* Scroll Indicator */}
         <a
           href="#schedule"
-          className="absolute bottom-8 flex flex-col items-center gap-2 transition-opacity hover:opacity-100 lg:bottom-8"
+          className="absolute bottom-8 flex flex-col items-center gap-2 transition-opacity hover:opacity-100 lg:bottom-4"
           aria-label="일정표로 이동"
         >
           <p className="text-xs tracking-widest text-white/60 lg:text-sm">

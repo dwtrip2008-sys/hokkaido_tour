@@ -82,14 +82,18 @@ export function DetailModal({
       <Sheet open={open} onOpenChange={onOpenChange}>
         <SheetContent
           side="bottom"
-          className="h-[80vh] overflow-y-auto p-6 bg-white [&>button]:text-gray-900 [&>button]:opacity-100"
+          className="h-[85vh] p-0 bg-white [&>button]:text-gray-900 [&>button]:opacity-100"
         >
-          <SheetHeader className="mb-6 p-0">
-            <SheetTitle className="text-xl font-bold text-gray-900 text-left">
-              {title}
-            </SheetTitle>
-          </SheetHeader>
-          {content}
+          <div className="flex flex-col h-full">
+            <SheetHeader className="px-6 pt-6 pb-4 shrink-0">
+              <SheetTitle className="text-xl font-bold text-gray-900 text-left">
+                {title}
+              </SheetTitle>
+            </SheetHeader>
+            <div className="overflow-y-auto px-6 pb-6">
+              {content}
+            </div>
+          </div>
         </SheetContent>
       </Sheet>
     );
@@ -99,14 +103,18 @@ export function DetailModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-w-3xl max-h-[80vh] overflow-y-auto p-8 bg-white [&>button]:text-gray-900 [&>button]:opacity-100"
+        className="max-w-3xl max-h-[90vh] p-0 bg-white [&>button]:text-gray-900 [&>button]:opacity-100"
       >
-        <DialogHeader className="mb-6">
-          <DialogTitle className="text-2xl font-bold text-gray-900">
-            {title}
-          </DialogTitle>
-        </DialogHeader>
-        {content}
+        <div className="flex flex-col max-h-[90vh]">
+          <DialogHeader className="px-8 pt-8 pb-4 shrink-0">
+            <DialogTitle className="text-2xl font-bold text-gray-900">
+              {title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="overflow-y-auto px-8 pb-8">
+            {content}
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );

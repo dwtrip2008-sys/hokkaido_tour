@@ -6,6 +6,64 @@
  */
 
 // ============================================
+// 항공편 정보
+// ============================================
+
+interface FlightRoute {
+  date: string;
+  departure: string;
+  arrival: string;
+  time: string;
+  flightNumber: string;
+}
+
+interface FlightInfo {
+  origin: string;
+  airline: string;
+  outbound: FlightRoute;
+  inbound: FlightRoute;
+}
+
+export const flights: FlightInfo[] = [
+  {
+    origin: '부산',
+    airline: '에어부산',
+    outbound: {
+      date: '11.19 (수)',
+      departure: '김해',
+      arrival: '삿포로',
+      time: '08:50 → 11:30',
+      flightNumber: 'BX182',
+    },
+    inbound: {
+      date: '11.22 (토)',
+      departure: '삿포로',
+      arrival: '김해',
+      time: '12:30 → 15:25',
+      flightNumber: 'BX181',
+    },
+  },
+  {
+    origin: '인천',
+    airline: '진에어',
+    outbound: {
+      date: '11.19 (수)',
+      departure: '인천',
+      arrival: '삿포로',
+      time: '08:35 → 11:15',
+      flightNumber: 'LJ301',
+    },
+    inbound: {
+      date: '11.22 (토)',
+      departure: '삿포로',
+      arrival: '인천',
+      time: '12:25 → 15:45',
+      flightNumber: 'LJ302',
+    },
+  },
+];
+
+// ============================================
 // 일정표 데이터
 // ============================================
 
