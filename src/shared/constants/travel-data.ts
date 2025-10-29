@@ -108,21 +108,35 @@ export const schedules: ScheduleDay[] = [
   {
     day: 2,
     date: "11/20(목)",
-    route: "도야 → 노보리베츠 → 오타루 → 삿포로",
+    route: "도야 → 노보리베츠 → 삿포로",
     timeline: [
-      { time: "08:00", activity: "호텔 조식 후 체크아웃" },
-      { time: "09:00", activity: "노보리베츠 지옥계곡 관광" },
-      { time: "11:00", activity: "노보리베츠 에도마을 관광" },
-      { time: "13:00", activity: "중식 (가리비밥 정식)" },
-      { time: "14:30", activity: "오타루 운하 관광" },
-      { time: "17:00", activity: "삿포로 이동 및 호텔 체크인" },
-      { time: "18:00", activity: "타쿠모리뷔페 (3시간 만찬)" },
+      {
+        time: "09:00",
+        activity:
+          "조식 후 가이드미팅 / 체크아웃\n ※ 골프팀 : 골프장 이동 - 북해도 CC급 18홀 캐디플레이",
+      },
+      {
+        time: "09:30",
+        activity: "도야 관광 - 쇼와신잔, 사이로전망대, 도야호수 유람선 탑승",
+      },
+      {
+        time: "13:00",
+        activity: "노보리베츠 이동 [이동시간 1시간 소요] - 지옥계곡, 시대촌",
+      },
+      {
+        time: "15:30",
+        activity: "삿포로 이동 [이동시간 2시간 소요] / 호텔 체크인 후 석식",
+      },
+      {
+        time: "18:00",
+        activity: "석식 : 만찬진행 – 다쿠모리뷔페 + 노미호다이",
+      },
     ],
-    accommodation: "그랜드 메르큐르 삿포로 오오도리공원 (2인 1실)",
+    accommodation: "삿포로 그랜드 머큐어 호텔 (2인 1실)",
     meals: {
       breakfast: "호텔식",
       lunch: "가리비밥 정식",
-      dinner: "타쿠모리뷔페 (양식/중식/일식) + 노미호다이",
+      dinner: "만찬 + 각종 주류 무제한",
     },
   },
   {
@@ -130,17 +144,28 @@ export const schedules: ScheduleDay[] = [
     date: "11/21(금)",
     route: "삿포로 (시내 관광)",
     timeline: [
-      { time: "08:00", activity: "호텔 조식" },
-      { time: "09:30", activity: "오오도리 공원 관광" },
-      { time: "11:00", activity: "삿포로 시계대 관광" },
+      {
+        time: "09:00",
+        activity:
+          "호텔 조식 후 가이드 미팅\n 골프팀 : 골프장 이동 - 브룩스 CC급 18홀 캐디플레이",
+      },
+      {
+        time: "10:00",
+        activity:
+          "오타루 이동 [이동시간 1시간 소요] - 오르골당, 유리공방, 운하",
+      },
+      {
+        time: "11:00",
+        activity:
+          "삿포로 이동 [이동시간 1시간 소요]\n 시로이코이비토파크(무료존), 오오도리공원, 삿포로 맥주 박물관 견학(시음 OR 1캔제공) \n 자유일정 원할시. 진행 가능 (중식 비용 3,000엔 현금지급) ",
+      },
       { time: "13:00", activity: "중식 (스시+우동 정식)" },
-      { time: "14:30", activity: "자유시간 (쇼핑 및 시내 관광)" },
-      { time: "18:00", activity: "석식 (3종류게무제한, 야끼니꾸, 주류무제한)" },
+      { time: "17:30", activity: "석식 후 호텔 이동 / 호텔 체크인 후 휴식" },
     ],
-    accommodation: "그랜드 메르큐르 삿포로 오오도리공원 (2인 1실)",
+    accommodation: "삿포로 그랜드 머큐어 호텔 (2인 1실)",
     meals: {
       breakfast: "호텔식",
-      lunch: "스시+우동 정식",
+      lunch: "스시 + 우동 정식 + 주류",
       dinner: "3종류게무제한 + 야끼니꾸 + 주류무제한",
     },
   },
@@ -149,10 +174,17 @@ export const schedules: ScheduleDay[] = [
     date: "11/22(토)",
     route: "삿포로 → 치토세 → 부산",
     timeline: [
-      { time: "07:00", activity: "호텔 조식 후 체크아웃" },
-      { time: "08:00", activity: "신치토세공항 이동" },
-      { time: "10:30", activity: "출국 수속" },
-      { time: "12:30", activity: "출발 (비행 2시간 30분)" },
+      { time: "08:00", activity: "호텔 조식 후 체크아웃" },
+      {
+        time: "09:00",
+        activity: "삿포로 이동 - 시계탑(차창), 면세점 1회 방문",
+      },
+
+      {
+        time: "12:00",
+        activity:
+          "공항으로 이동 / 출국소속 / 신치토세 국제공항 출발 [비행시간 3시간 소요]",
+      },
       { time: "15:00", activity: "김해공항 도착/입국" },
       { time: "16:00", activity: "해산" },
     ],
@@ -194,7 +226,7 @@ export const hotels: Hotel[] = [
     id: 2,
     name: "그랜드 메르큐르 삿포로 오오도리공원",
     nights: "2박",
-    image: "/images/image10.jpg", // Slide 10 - 그랜드 메르큐르 (3.81cm x 2.54cm)
+    image: "/images/image16.jpeg", // Slide 10 - 그랜드 메르큐르 (3.81cm x 2.54cm)
     description:
       "삿포로 중심의 오오도리공원 바로 옆에 위치해 뛰어난 접근성과 높은 숙박 품질을 동시에 갖춘 호텔입니다.",
     fullDescription: `그랜드 메르큐르 삿포로 오오도리공원 호텔은 아코르(Accor) 그룹 산하의 '그랜드 메르큐르(Grand Mercure)' 브랜드로 삿포로 중심의 오오도리공원(大通公園) 바로 옆에 위치해 뛰어난 접근성과 높은 숙박 품질을 동시에 갖춘 것이 큰 강점입니다.
@@ -219,28 +251,28 @@ export const meals: Meal[] = [
   {
     id: 1,
     name: "소토반야키 정식",
-    image: "/images/image11.JPEG", // Slide 11 - 소토반야키 (5.74cm x 3.83cm)
+    image: "/images/image21.jpeg", // Slide 11 - 소토반야키 (5.74cm x 3.83cm)
     description:
       "갓 구운 요리를 바로 상 위의 소토반(도자기그릇) 위에서 제공하는 일본식 세트 메뉴입니다. 돌판, 도자기판과 달리 세련된 외형과 동시에 열 보존이 잘되어 끝까지 따뜻하게 즐길 수 있습니다.",
   },
   {
     id: 2,
     name: "호텔뷔페+주류",
-    image: "/images/image12.JPEG", // Slide 12 - 호텔뷔페 (5.74cm x 3.83cm)
+    image: "/images/image25.JPEG", // Slide 12 - 호텔뷔페 (5.74cm x 3.83cm)
     description:
       "튀김, 직접 만드는 해물 덮밥, 쇠고기 등은 셰프가 눈앞에서 만들어주는 라이브 키친으로 즐기실 수 있습니다. 널찍한 가게 안에서 도야코를 바라볼 수 있습니다.",
   },
   {
     id: 3,
     name: "가리비밥 정식",
-    image: "/images/image18.png", // Slide 13 - 가리비밥 (5.82cm x 3.32cm)
+    image: "/images/image26.png", // Slide 13 - 가리비밥 (5.82cm x 3.32cm)
     description:
       "가리비밥은 가리비와 건표고, 다시마 육수로 밥을 지은 요리입니다. 밥알이 육수를 흡수해 감칠맛이 진국입니다. 재료부터 우마미를 끌어내는 방식이 특징이며, 훗카이도산 가리비로 만들면 더욱 깊은 풍미가 납니다.",
   },
   {
     id: 4,
     name: "타쿠모리뷔페",
-    image: "/images/image19.jpeg", // Slide 14 - 타쿠모리뷔페 (4.19cm x 4.02cm)
+    image: "/images/image29.JPEG", // Slide 14 - 타쿠모리뷔페 (4.19cm x 4.02cm)
     description:
       "양식, 중식, 일식을 모두 즐길 수 있는 뷔페입니다. 노미호다이(각종 주류 무제한)로 제공됩니다.",
     note: "단독룸 3시간 진행, MC진행 및 경품행사, 노래방기기 설치",
@@ -255,7 +287,7 @@ export const meals: Meal[] = [
   {
     id: 6,
     name: "3종류게무제한",
-    image: "/images/image20.jpeg", // Slide 16 - 3종류게 (추정)
+    image: "/images/image33.jpeg", // Slide 16 - 3종류게 (추정)
     description:
       "훗카이도산 3대 게 무제한 제공 (킹크랩, 털게, 흰게 등). 뷔페 형식의 신선한 해산물, 샐러드바, 기타 다양한 반찬 섹션도 포함되어 있습니다. 야끼니꾸와 주류도 무제한으로 제공됩니다.",
   },
@@ -279,7 +311,7 @@ export const attractions: Attraction[] = [
     id: 1,
     name: "시코츠 호수",
     type: "attraction",
-    image: "/images/image32.jpeg", // Slide 19 - 시코츠 호수 (6.07cm x 4.04cm)
+    image: "/images/image38.jpeg", // Slide 19 - 시코츠 호수 (6.07cm x 4.04cm)
     description:
       "홋카이도 지토세시 남서부에 위치한 칼데라 호수로, 맑고 푸른 물빛이 특징입니다.",
     fullDescription: `홋카이도 지토세시 남서부에 위치한 칼데라 호수로, 약 3만2천 년 전 화산 폭발로 형성되었습니다. 면적은 78.4 km², 평균 수심은 265m, 최대 수심은 363m로 일본 내 2번째 깊은 호수입니다.
@@ -292,7 +324,7 @@ export const attractions: Attraction[] = [
     id: 2,
     name: "지옥계곡",
     type: "attraction",
-    image: "/images/image33.jpeg", // Slide 20 - 지옥계곡 (3.21cm x 2.14cm)
+    image: "/images/image39.jpeg", // Slide 20 - 지옥계곡 (3.21cm x 2.14cm)
     description:
       "약 1만 년 전 화산 폭발로 형성된 폭렬화구. 지금도 온천과 증기공에서 유황 냄새가 풍깁니다.",
     fullDescription: `약 1만 년 전 히요리산(火寄山)의 격렬한 화산 폭발에 의해 형성된 폭렬화구입니다. 지름 약 450미터, 면적 약 11헥타르에 달하는 이 계곡에서는 지금도 다수의 온천과 증기공, 유황 냄새를 풍기는 온천수가 분출되고 있습니다.
@@ -301,9 +333,9 @@ export const attractions: Attraction[] = [
   },
   {
     id: 3,
-    name: "노보리베츠 에도마을",
+    name: "노보리베츠   다테 지다이무라[시대촌]",
     type: "attraction",
-    image: "/images/image34.png", // Slide 20 - 에도마을 (3.21cm x 2.14cm)
+    image: "/images/image40.jpeg", // Slide 20 - 에도마을 (3.21cm x 2.14cm)
     description:
       "에도 시대를 무대로 한 테마형 문화 공원. 닌자 쇼, 시대극 등 다양한 체험이 가능합니다.",
     fullDescription: `노보리베츠시에 위치한 에도 시대(1603~1868년)를 무대로 한 테마형 문화 공원입니다. 이곳에는 쇼군과 다이묘 시대의 건축 양식을 본뜬 목조 건물 90여 채가 재현되어 있으며, 상인 가옥·사무라이 저택·닌자 저택 등 역사적 배경을 충실히 복원하고 있습니다.
@@ -316,7 +348,7 @@ export const attractions: Attraction[] = [
     id: 4,
     name: "도야호 유람선",
     type: "attraction",
-    image: "/images/image35.png", // Slide 21 - 도야호 유람선 (3.31cm x 2.24cm)
+    image: "/images/image41.png", // Slide 21 - 도야호 유람선 (3.31cm x 2.24cm)
     description:
       "화산 칼데라 호수인 도야호수를 약 50분간 순환하며 주변 풍광을 감상할 수 있는 관광선입니다.",
     fullDescription: `화산 칼데라 호수인 도야호수를 약 50분간 순환하며 주변 풍광을 감상할 수 있는 관광선입니다. 유람선은 도야코 온천 마을 인근 선착장에서 출발하며, 여름철(4월 말~10월)에는 나카지마(中島) 섬에 기항하여 약 80분 코스로 운행되기도 합니다.
@@ -327,7 +359,7 @@ export const attractions: Attraction[] = [
     id: 5,
     name: "오타루 운하",
     type: "attraction",
-    image: "/images/image38.jpeg", // Slide 22 - 오타루 운하 (2.33cm x 1.75cm)
+    image: "/images/image42.jpeg", // Slide 22 - 오타루 운하 (2.33cm x 1.75cm)
     description:
       "1923년 완공된 역사적 수로. 현재는 보존되어 보행자 공간과 공원으로 활용됩니다.",
     fullDescription: `1923년 완공된 역사적 수로로, 초기에는 선박에서 창고로 화물 운송을 위한 물길로 사용되었습니다. 이후 1960년대 항만 시설이 현대화되며 물류 기능이 중단되었지만, 시민 보존 운동으로 일부 구간이 원형대로 보존되어 보행자 공간과 공원으로 탈바꿈되었습니다.
@@ -338,7 +370,7 @@ export const attractions: Attraction[] = [
     id: 6,
     name: "오오도리 공원",
     type: "attraction",
-    image: "/images/image42.jpeg", // Slide 23 - 오오도리 공원 (2.33cm x 1.75cm)
+    image: "/images/image47.jpeg", // Slide 23 - 오오도리 공원 (2.33cm x 1.75cm)
     description:
       "삿포로 시 중심부를 동서로 가로지르는 약 1.5km 길이의 도심 공원입니다.",
     fullDescription: `삿포로 시 중심부를 동서로 가로지르는 약 1.5km 길이의 도심 공원으로, 삿포로 TV타워에서부터 서쪽으로 이어집니다. 원래는 도시의 방화선을 겸한 도로였으나, 현재는 약 90여 종의 수목과 화단, 분수, 조형물이 배치된 시민 휴식처로 활용됩니다.
@@ -349,7 +381,7 @@ export const attractions: Attraction[] = [
     id: 7,
     name: "삿포로 시계대",
     type: "attraction",
-    image: "/images/image45.jpeg", // Slide 24 - 삿포로 시계대 (6.06cm x 4.04cm)
+    image: "/images/image50.jpeg", // Slide 24 - 삿포로 시계대 (6.06cm x 4.04cm)
     description:
       "1878년 메이지 정부에 의해 설립된 목조 건축물. 홋카이도의 개척 역사를 상징합니다.",
     fullDescription: `삿포로 시계대(札幌時計台)는 일본 홋카이도 삿포로시에 위치한 목조 건축물로, 1878년 메이지 정부에 의해 설립된 삿포로 농학교(현 홋카이도 대학)의 부속 연무장으로 건립되었습니다.
@@ -360,7 +392,7 @@ export const attractions: Attraction[] = [
     id: 8,
     name: "Hokkaido Country Club",
     type: "golf",
-    image: "/images/image46.png", // Slide 25 - Hokkaido CC (6.74cm x 5.68cm)
+    image: "/images/image51.JPEG", // Slide 25 - Hokkaido CC (6.74cm x 5.68cm)
     description: "하코다테 인근 (오누마 준국립공원)\n자연경관이 빼어난 골프장.",
     fullDescription: `하코다테 인근 오누마 준국립공원에 위치한 골프장으로, 빼어난 자연경관을 자랑합니다. 코스는 산세를 활용한 전략적인 레이아웃으로 구성되어 있으며, 아름다운 풍경과 함께 도전적인 라운드를 즐길 수 있습니다.
 
@@ -370,7 +402,7 @@ export const attractions: Attraction[] = [
     id: 9,
     name: "Brooks Country Club",
     type: "golf",
-    image: "/images/image48.jpeg", // Slide 26 - Brooks CC (6.74cm x 5.68cm)
+    image: "/images/image52.JPEG", // Slide 26 - Brooks CC (6.74cm x 5.68cm)
     description:
       "JR 도마코마이시 우에나에\n자연경관과 전략플레이의 조화를 경험할 수 있는 코스",
     fullDescription: `JR 도마코마이시 우에나에에 위치한 Brooks Country Club은 자연경관과 전략적인 플레이의 조화를 경험할 수 있는 골프장입니다. 코스는 자연 지형을 최대한 살려 설계되었으며, 각 홀마다 다양한 전략이 요구됩니다.
@@ -387,7 +419,7 @@ export const vehicleInfo = {
   type: "45인승 전용 차량",
   quantity: "120명 기준 총 4대 운행",
   features: "편안한 좌석과 넓은 공간",
-  image: "/images/image50.jpeg", // Slide 18 - 대형버스 (추정)
+  image: "/images/image37.jpeg", // Slide 18 - 대형버스 (추정)
   details: [
     "45인승 대형 전용 차량",
     "총 4대 운행 (관광 100명 + 골프 20명)",
