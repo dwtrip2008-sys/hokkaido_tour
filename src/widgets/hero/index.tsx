@@ -55,7 +55,7 @@ export function Hero() {
         {/* 로고 */}
         <div className="mb-3 overflow-hidden">
           <Image
-            src="/images/logo.png"
+            src="/images/logo_white.png"
             width={240}
             height={240}
             alt="IFC Logo"
