@@ -22,7 +22,7 @@ export function VideoSection() {
             autoPlay
             loop
             playsInline
-            src="https://res.cloudinary.com/dnpcpkdut/video/upload/v1761886117/2025_IFC_%EB%B6%81%ED%95%B4%EB%8F%84_%EC%86%8C%EA%B0%9C%EC%98%81%EC%83%81_sdb14s.mp4"
+            src="https://res.cloudinary.com/dnpcpkdut/video/upload/v1762049717/hokkaido_final_compressed_xex3qg.mp4"
           >
             <source src="/2025+IFC+북해도+소개영상.mp4" type="video/mp4" />
             Your browser does not support the video tag.

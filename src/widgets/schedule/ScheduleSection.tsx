@@ -8,7 +8,56 @@ import {
 } from '@/shared/ui/accordion';
 import { Separator } from '@/shared/ui/separator';
 import { schedules, flights } from '@/shared/constants/travel-data';
-import { Plane } from 'lucide-react';
+import { Plane, Building2, UtensilsCrossed } from 'lucide-react';
+import Image from 'next/image';
+
+// Activity 텍스트 파싱 및 스타일링
+function parseActivity(activity: string) {
+  const lines = activity.split('\n');
+
+  return lines.map((line, idx) => {
+    // 빈 줄 처리 (줄바꿈 간격)
+    if (line.trim() === '') {
+      return <div key={idx} className="h-2" />;
+    }
+
+    let baseClassName = 'text-gray-900';
+
+    // 기본 색상 결정 (줄 전체)
+    if (line.startsWith('**') && line.endsWith('**')) {
+      baseClassName = 'text-red-600 font-semibold';
+    } else if (line.startsWith('* ')) {
+      baseClassName = 'text-green-600 font-semibold';
+    } else if (line.startsWith('- ')) {
+      baseClassName = 'text-sky-blue font-semibold';
+    }
+
+    // ♨온천욕이 포함되어 있으면 그 부분만 빨간색으로 강조
+    if (line.includes('♨')) {
+      const parts = line.split(/(♨온천욕)/g);
+
+      return (
+        <div key={idx} className={`${baseClassName} wrap-break-word`}>
+          {parts.map((part, i) =>
+            part === '♨온천욕' ? (
+              <span key={i} className="text-red-600 font-semibold">
+                {part}
+              </span>
+            ) : (
+              part
+            )
+          )}
+        </div>
+      );
+    }
+
+    return (
+      <div key={idx} className={`${baseClassName} wrap-break-word`}>
+        {line}
+      </div>
+    );
+  });
+}
 
 export function ScheduleSection() {
   return (
@@ -37,9 +86,18 @@ export function ScheduleSection() {
                   <h4 className="text-lg font-bold text-deep-navy lg:text-xl">
                     {flight.origin} 출발
                   </h4>
-                  <span className="rounded-full bg-sky-blue/10 px-3 py-1 text-sm font-semibold text-sky-blue lg:px-4 lg:text-base">
-                    {flight.airline}
-                  </span>
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <Image
+                      src={flight.logo}
+                      alt={flight.airline}
+                      width={60}
+                      height={20}
+                      className="h-5 w-auto lg:h-6"
+                    />
+                    <span className="rounded-full bg-sky-blue/10 px-3 py-1 text-sm font-semibold text-sky-blue lg:px-4 lg:text-base">
+                      {flight.airline}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Outbound Flight */}
@@ -109,12 +167,12 @@ export function ScheduleSection() {
                     {/* Timeline */}
                     <div className="space-y-4 mb-6">
                       {schedule.timeline.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4">
-                          <div className="min-w-[65px] text-sky-blue font-bold text-base bg-sky-blue/5 rounded px-2 py-1 text-center shrink-0">
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="min-w-[58px] text-sky-blue font-bold text-sm bg-sky-blue/5 rounded px-1.5 py-0.5 text-center shrink-0">
                             {item.time}
                           </div>
-                          <div className="text-gray-900 text-base leading-relaxed whitespace-pre-line">
-                            {item.activity}
+                          <div className="text-[15px] leading-[1.7]">
+                            {parseActivity(item.activity)}
                           </div>
                         </div>
                       ))}
@@ -124,20 +182,22 @@ export function ScheduleSection() {
 
                     {/* Accommodation */}
                     <div className="mb-6 bg-white rounded-md p-4 border border-gray-200">
-                      <div className="font-bold text-base text-deep-navy mb-2">
+                      <div className="flex items-center gap-2 font-bold text-[15px] text-deep-navy mb-2">
+                        <Building2 className="h-4 w-4 text-sky-blue" />
                         숙박
                       </div>
-                      <div className="text-gray-700 text-base leading-relaxed">
+                      <div className="text-gray-700 text-[15px] leading-relaxed">
                         {schedule.accommodation}
                       </div>
                     </div>
 
                     {/* Meals */}
                     <div className="bg-white rounded-md p-4 border border-gray-200">
-                      <div className="font-bold text-base text-deep-navy mb-3">
+                      <div className="flex items-center gap-2 font-bold text-[15px] text-deep-navy mb-3">
+                        <UtensilsCrossed className="h-4 w-4 text-accent-orange" />
                         식사
                       </div>
-                      <div className="space-y-2 text-base text-gray-700">
+                      <div className="space-y-2 text-[15px] text-gray-700">
                         <div className="flex">
                           <span className="font-semibold min-w-[50px]">조식</span>
                           <span>{schedule.meals.breakfast}</span>
@@ -199,8 +259,8 @@ export function ScheduleSection() {
                             <div className="min-w-[80px] text-sky-blue font-bold text-lg bg-sky-blue/5 rounded-md px-3 py-1.5 text-center shrink-0">
                               {item.time}
                             </div>
-                            <div className="text-gray-900 text-lg leading-relaxed whitespace-pre-line">
-                              {item.activity}
+                            <div className="text-lg leading-[1.7]">
+                              {parseActivity(item.activity)}
                             </div>
                           </div>
                         ))}
@@ -211,7 +271,8 @@ export function ScheduleSection() {
                       <div className="grid grid-cols-2 gap-12">
                         {/* Accommodation */}
                         <div className="bg-white rounded-lg p-5 border border-gray-200">
-                          <div className="font-bold text-lg text-deep-navy mb-3">
+                          <div className="flex items-center gap-2 font-bold text-lg text-deep-navy mb-3">
+                            <Building2 className="h-5 w-5 text-sky-blue" />
                             숙박
                           </div>
                           <div className="text-gray-700 text-base leading-relaxed">
@@ -221,7 +282,8 @@ export function ScheduleSection() {
 
                         {/* Meals */}
                         <div className="bg-white rounded-lg p-5 border border-gray-200">
-                          <div className="font-bold text-lg text-deep-navy mb-3">
+                          <div className="flex items-center gap-2 font-bold text-lg text-deep-navy mb-3">
+                            <UtensilsCrossed className="h-5 w-5 text-accent-orange" />
                             식사
                           </div>
                           <div className="space-y-2.5 text-base text-gray-700">

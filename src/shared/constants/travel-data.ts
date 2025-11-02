@@ -20,6 +20,7 @@ interface FlightRoute {
 interface FlightInfo {
   origin: string;
   airline: string;
+  logo: string;
   outbound: FlightRoute;
   inbound: FlightRoute;
 }
@@ -28,6 +29,7 @@ export const flights: FlightInfo[] = [
   {
     origin: "부산",
     airline: "에어부산",
+    logo: "/revised/airbusan.png",
     outbound: {
       date: "11.19 (수)",
       departure: "김해",
@@ -46,6 +48,7 @@ export const flights: FlightInfo[] = [
   {
     origin: "인천",
     airline: "진에어",
+    logo: "/revised/jinair.png",
     outbound: {
       date: "11.19 (수)",
       departure: "인천",
@@ -89,20 +92,23 @@ export const schedules: ScheduleDay[] = [
   {
     day: 1,
     date: "11/19(수)",
-    route: "부산 → 치토세 → 시코츠 → 도야",
+    route: "부산/인천 → 치토세 → 시코츠 → 도야",
     timeline: [
-      { time: "06:30", activity: "김해공항 집결/출국" },
-      { time: "08:30", activity: "출발 (비행 2시간 30분)" },
-      { time: "11:00", activity: "신치토세공항 도착/입국" },
-      { time: "13:00", activity: "시코츠 이동 (1시간)\n• 시코츠 호수 관광" },
-      { time: "15:00", activity: "온천욕" },
-      { time: "18:00", activity: "호텔 체크인 및 휴식" },
+      { time: "06:00", activity: "김해/인천공항 집결-수속" },
+      { time: "08:35", activity: "인천공항 출발 (2시간30분소요)" },
+      { time: "08:50", activity: "김해공항 출발 (2시간30분소요)" },
+      { time: "11:20", activity: "신치토세공항 도착/입국수속" },
+      { time: "13:00", activity: "시코츠 이동 (1시간)\n- 시코츠 호수 관광" },
+      {
+        time: "15:00",
+        activity: "도야 이동 (1시간)\n- 호텔 체크인 / 휴식 / 석식 / ♨온천욕",
+      },
     ],
-    accommodation: "도야 만세각 온천호텔 (2인 1실)",
+    accommodation: "도야만세각 온천호텔",
     meals: {
       breakfast: "공항식",
-      lunch: "소토반야키정식+주류",
-      dinner: "호텔뷔페+주류",
+      lunch: "소토반야키정식",
+      dinner: "호텔뷔페",
     },
   },
   {
@@ -113,80 +119,76 @@ export const schedules: ScheduleDay[] = [
       {
         time: "09:00",
         activity:
-          "조식 후 가이드미팅 / 체크아웃\n ※ 골프팀 : 골프장 이동 - 북해도 CC급 18홀 캐디플레이",
+          "조식 후 가이드미팅/체크아웃\n* 골프팀 : 무로란CC급 18홀 라운딩",
       },
       {
         time: "09:30",
-        activity: "도야 관광 - 쇼와신잔, 사이로전망대, 도야호수 유람선 탑승",
+        activity: "도야관광\n- 쇼와신잔, 사이로전망대, 도야호유람선",
       },
       {
-        time: "13:00",
-        activity: "노보리베츠 이동 [이동시간 1시간 소요] - 지옥계곡, 시대촌",
+        time: "12:00",
+        activity: "노보리베츠 이동 (1시간)\n- 지옥계곡, 시대촌",
       },
       {
-        time: "15:30",
-        activity: "삿포로 이동 [이동시간 2시간 소요] / 호텔 체크인 후 석식",
+        time: "14:00",
+        activity: "삿포로 이동 (2시간)\n- 호텔 체크인 / 휴식",
       },
       {
         time: "18:00",
-        activity: "석식 : 만찬진행 – 다쿠모리뷔페 + 노미호다이",
+        activity: "만찬행사\n- 다쿠모리뷔페+노미호다이",
       },
     ],
-    accommodation: "삿포로 그랜드 머큐어 호텔 (2인 1실)",
+    accommodation: "그랜드 머큐어 삿포로",
     meals: {
       breakfast: "호텔식",
-      lunch: "가리비밥 정식",
-      dinner: "만찬 + 각종 주류 무제한",
+      lunch: "가리비밥정식",
+      dinner: "단독만찬",
     },
   },
   {
     day: 3,
     date: "11/21(금)",
-    route: "삿포로 (시내 관광)",
+    route: "삿포로(시내관광)",
     timeline: [
       {
-        time: "09:00",
-        activity:
-          "호텔 조식 후 가이드 미팅\n 골프팀 : 골프장 이동 - 브룩스 CC급 18홀 캐디플레이",
+        time: "09:30",
+        activity: "조식 후 가이드미팅\n* 골프팀 : 북해도CC급 18홀 라운딩",
       },
       {
         time: "10:00",
-        activity:
-          "오타루 이동 [이동시간 1시간 소요] - 오르골당, 유리공방, 운하",
+        activity: "오타루 이동 (1시간)\n- 오르골당, 유리공방, 운하",
       },
       {
-        time: "11:00",
+        time: "13:00",
         activity:
-          "삿포로 이동 [이동시간 1시간 소요]\n 시로이코이비토파크(무료존), 오오도리공원, 삿포로 맥주 박물관 견학(시음 OR 1캔제공) \n 자유일정 원할시. 진행 가능 (중식 비용 3,000엔 현금지급) ",
+          "삿포로 이동 (1시간)\n- 시로이코이비토파크, 오오도리공원, 삿포로맥주박물관\n\n** 자유일정 진행가능 (중식비용 3,000원 현금지급) **",
       },
-      { time: "13:00", activity: "중식 (스시+우동 정식)" },
-      { time: "17:30", activity: "석식 후 호텔 이동 / 호텔 체크인 후 휴식" },
+      { time: "17:30", activity: "자유일정 및 호텔휴식" },
     ],
-    accommodation: "삿포로 그랜드 머큐어 호텔 (2인 1실)",
+    accommodation: "그랜드 머큐어 삿포로",
     meals: {
       breakfast: "호텔식",
-      lunch: "스시 + 우동 정식 + 주류",
-      dinner: "3종류게무제한 + 야끼니꾸 + 주류무제한",
+      lunch: "초밥정식",
+      dinner: "게요리무제한+야끼니꾸",
     },
   },
   {
     day: 4,
     date: "11/22(토)",
-    route: "삿포로 → 치토세 → 부산",
+    route: "삿포로 → 치토세 → 부산/인천",
     timeline: [
-      { time: "08:00", activity: "호텔 조식 후 체크아웃" },
+      { time: "08:00", activity: "조식 후 가이드미팅/체크아웃" },
       {
         time: "09:00",
-        activity: "삿포로 이동 - 시계탑(차창), 면세점 1회 방문",
+        activity: "삿포로 이동\n- 시계탑 관광(차장), 면세점 방문",
       },
-
       {
-        time: "12:00",
-        activity:
-          "공항으로 이동 / 출국소속 / 신치토세 국제공항 출발 [비행시간 3시간 소요]",
+        time: "10:00",
+        activity: "공항으로 이동 / 출국수속",
       },
-      { time: "15:00", activity: "김해공항 도착/입국" },
-      { time: "16:00", activity: "해산" },
+      { time: "12:30", activity: "신치토세공항 출발 (3시간소요)" },
+      { time: "15:25", activity: "김해공항 도착" },
+      { time: "15:45", activity: "인천공항 도착" },
     ],
     accommodation: "-",
     meals: {
@@ -224,7 +226,7 @@ export const hotels: Hotel[] = [
   },
   {
     id: 2,
-    name: "그랜드 메르큐르 삿포로 오오도리공원",
+    name: "그랜드 머큐어 삿포로 호텔",
     nights: "2박",
     image: "/images/image16.jpeg", // Slide 10 - 그랜드 메르큐르 (3.81cm x 2.54cm)
     description:
@@ -250,44 +252,44 @@ interface Meal {
 export const meals: Meal[] = [
   {
     id: 1,
-    name: "소토반야키 정식",
-    image: "/images/image21.jpeg", // Slide 11 - 소토반야키 (5.74cm x 3.83cm)
+    name: "소토반야키정식",
+    image: "/revised/hotel/sotobanyaki-set.jpg",
     description:
       "갓 구운 요리를 바로 상 위의 소토반(도자기그릇) 위에서 제공하는 일본식 세트 메뉴입니다. 돌판, 도자기판과 달리 세련된 외형과 동시에 열 보존이 잘되어 끝까지 따뜻하게 즐길 수 있습니다.",
   },
   {
     id: 2,
-    name: "호텔뷔페+주류",
-    image: "/images/image25.JPEG", // Slide 12 - 호텔뷔페 (5.74cm x 3.83cm)
+    name: "호텔뷔페 (온천호텔)",
+    image: "/images/image25.JPEG",
     description:
       "튀김, 직접 만드는 해물 덮밥, 쇠고기 등은 셰프가 눈앞에서 만들어주는 라이브 키친으로 즐기실 수 있습니다. 널찍한 가게 안에서 도야코를 바라볼 수 있습니다.",
   },
   {
     id: 3,
     name: "가리비밥 정식",
-    image: "/images/image26.png", // Slide 13 - 가리비밥 (5.82cm x 3.32cm)
+    image: "/revised/hotel/scallop-rice-set.jpg",
     description:
       "가리비밥은 가리비와 건표고, 다시마 육수로 밥을 지은 요리입니다. 밥알이 육수를 흡수해 감칠맛이 진국입니다. 재료부터 우마미를 끌어내는 방식이 특징이며, 훗카이도산 가리비로 만들면 더욱 깊은 풍미가 납니다.",
   },
   {
     id: 4,
-    name: "타쿠모리뷔페",
-    image: "/images/image29.JPEG", // Slide 14 - 타쿠모리뷔페 (4.19cm x 4.02cm)
+    name: "타쿠모리뷔페(단독만찬)",
+    image: "/revised/hotel/takumori-buffet.jpg",
     description:
       "양식, 중식, 일식을 모두 즐길 수 있는 뷔페입니다. 노미호다이(각종 주류 무제한)로 제공됩니다.",
     note: "단독룸 3시간 진행, MC진행 및 경품행사, 노래방기기 설치",
   },
   {
     id: 5,
-    name: "스시+우동 정식",
-    image: "/images/image31.png", // Slide 15 - 스시+우동 (5.65cm x 4.24cm)
+    name: "초밥정식",
+    image: "/revised/hotel/sushi-set.jpg",
     description:
       "스시+우동 정식은 일본식 밥상의 균형과 만족감을 동시에 누릴 수 있는 대표적인 정식 메뉴입니다. 부담없는 구성으로, 훗카이도 전역에서 만나볼 수 있습니다.",
   },
   {
     id: 6,
-    name: "3종류게무제한",
-    image: "/images/image33.jpeg", // Slide 16 - 3종류게 (추정)
+    name: "게요리무제한+야끼니꾸",
+    image: "/revised/hotel/crab-yakiniku.jpg",
     description:
       "훗카이도산 3대 게 무제한 제공 (킹크랩, 털게, 흰게 등). 뷔페 형식의 신선한 해산물, 샐러드바, 기타 다양한 반찬 섹션도 포함되어 있습니다. 야끼니꾸와 주류도 무제한으로 제공됩니다.",
   },
@@ -359,7 +361,7 @@ export const attractions: Attraction[] = [
     id: 5,
     name: "오타루 운하",
     type: "attraction",
-    image: "/images/image42.jpeg", // Slide 22 - 오타루 운하 (2.33cm x 1.75cm)
+    image: "/revised/attr/otaru-canal.jfif",
     description:
       "1923년 완공된 역사적 수로. 현재는 보존되어 보행자 공간과 공원으로 활용됩니다.",
     fullDescription: `1923년 완공된 역사적 수로로, 초기에는 선박에서 창고로 화물 운송을 위한 물길로 사용되었습니다. 이후 1960년대 항만 시설이 현대화되며 물류 기능이 중단되었지만, 시민 보존 운동으로 일부 구간이 원형대로 보존되어 보행자 공간과 공원으로 탈바꿈되었습니다.
@@ -390,24 +392,23 @@ export const attractions: Attraction[] = [
   },
   {
     id: 8,
-    name: "Hokkaido Country Club",
+    name: "무로란CC (Muroran Golf Club)",
     type: "golf",
-    image: "/images/image51.JPEG", // Slide 25 - Hokkaido CC (6.74cm x 5.68cm)
+    image: "/revised/attr/muroran-golf-club.jfif",
+    description: "일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장. 고도의 전략성과 아름다운 조형미가 특징입니다.",
+    fullDescription: `무로란CC는 일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장으로, 일본의 유명 골프 코스 설계가 이노우에 세이이치가 설계했습니다.
+
+이곳은 고도의 전략성과 아름다운 조형미가 특징이며, 완만한 경사를 이용한 전략적인 코스와 언덕에 위치하여 섬세한 샷과 기술이 요구되는 곳입니다. 2001년에는 JLPGA 일본 여자 오픈 대회가 열리기도 했습니다.`,
+  },
+  {
+    id: 9,
+    name: "북해도CC (Hokkaido Country Club)",
+    type: "golf",
+    image: "/images/image51.JPEG",
     description: "하코다테 인근 (오누마 준국립공원)\n자연경관이 빼어난 골프장.",
     fullDescription: `하코다테 인근 오누마 준국립공원에 위치한 골프장으로, 빼어난 자연경관을 자랑합니다. 코스는 산세를 활용한 전략적인 레이아웃으로 구성되어 있으며, 아름다운 풍경과 함께 도전적인 라운드를 즐길 수 있습니다.
 
 클럽하우스는 현대적인 시설을 갖추고 있으며, 라운드 후에는 편안한 휴식과 함께 맛있는 식사를 즐길 수 있습니다. 특히 홋카이도의 신선한 식재료로 준비된 클럽 중식은 골퍼들에게 인기가 높습니다.`,
-  },
-  {
-    id: 9,
-    name: "Brooks Country Club",
-    type: "golf",
-    image: "/images/image52.JPEG", // Slide 26 - Brooks CC (6.74cm x 5.68cm)
-    description:
-      "JR 도마코마이시 우에나에\n자연경관과 전략플레이의 조화를 경험할 수 있는 코스",
-    fullDescription: `JR 도마코마이시 우에나에에 위치한 Brooks Country Club은 자연경관과 전략적인 플레이의 조화를 경험할 수 있는 골프장입니다. 코스는 자연 지형을 최대한 살려 설계되었으며, 각 홀마다 다양한 전략이 요구됩니다.
-
-넓은 페어웨이와 정교한 그린이 특징이며, 중급자부터 상급자까지 모두 즐길 수 있는 난이도로 구성되어 있습니다. 클럽하우스는 쾌적한 환경을 제공하며, 라운드 전후로 편안한 휴식을 취할 수 있습니다.`,
   },
 ];
 

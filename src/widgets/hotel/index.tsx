@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { hotels } from '@/shared/constants/travel-data';
-import { HotelCard } from './ui/hotel-card';
-import { DetailModal } from '@/features/detail-modal';
+import { useState } from "react";
+import { hotels } from "@/shared/constants/travel-data";
+import { HotelCard } from "./ui/hotel-card";
+import { DetailModal } from "@/features/detail-modal";
 
 export function HotelWidget() {
   const [selectedHotel, setSelectedHotel] = useState<number | null>(null);
