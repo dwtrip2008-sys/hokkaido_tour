@@ -361,7 +361,7 @@ export const attractions: Attraction[] = [
     id: 5,
     name: "오타루 운하",
     type: "attraction",
-    image: "/revised/attr/otaru-canal.jfif",
+    image: "/revised/attr/otaru-canal.jpg",
     description:
       "1923년 완공된 역사적 수로. 현재는 보존되어 보행자 공간과 공원으로 활용됩니다.",
     fullDescription: `1923년 완공된 역사적 수로로, 초기에는 선박에서 창고로 화물 운송을 위한 물길로 사용되었습니다. 이후 1960년대 항만 시설이 현대화되며 물류 기능이 중단되었지만, 시민 보존 운동으로 일부 구간이 원형대로 보존되어 보행자 공간과 공원으로 탈바꿈되었습니다.
@@ -394,7 +394,7 @@ export const attractions: Attraction[] = [
     id: 8,
     name: "무로란CC (Muroran Golf Club)",
     type: "golf",
-    image: "/revised/attr/muroran-golf-club.jfif",
+    image: "/revised/attr/muroran-golf-club.jpg",
     description: "일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장. 고도의 전략성과 아름다운 조형미가 특징입니다.",
     fullDescription: `무로란CC는 일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장으로, 일본의 유명 골프 코스 설계가 이노우에 세이이치가 설계했습니다.
 
