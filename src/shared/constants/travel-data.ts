@@ -119,7 +119,7 @@ export const schedules: ScheduleDay[] = [
       {
         time: "10:00",
         activity:
-          "조식 후 가이드미팅/체크아웃\n* 골프팀 : 무로란CC급 18홀 라운딩",
+          "조식 후 가이드미팅/체크아웃\n* 골프팀 : 무로란 CC급 18홀 라운딩 [09:07]",
       },
       {
         time: "10:30",
@@ -152,7 +152,8 @@ export const schedules: ScheduleDay[] = [
     timeline: [
       {
         time: "10:00",
-        activity: "조식 후 가이드미팅\n* 골프팀 : 북해도CC급 18홀 라운딩",
+        activity:
+          "조식 후 가이드미팅\n* 골프팀 : 북해도 CC급 18홀 라운딩 [09:03]",
       },
       {
         time: "10:30",
