@@ -2,6 +2,7 @@ import {
   checklistItems,
   additionalNotice,
 } from '@/shared/constants/travel-data';
+import Image from 'next/image';
 
 export function Checklist() {
   return (
@@ -24,6 +25,17 @@ export function Checklist() {
             <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700 lg:text-base">
               {item.description}
             </p>
+            {item.image && (
+              <div className="mt-3">
+                <Image
+                  src={item.image}
+                  alt={`${item.title} 관련 이미지`}
+                  width={593}
+                  height={194}
+                  className="w-full h-auto rounded-md"
+                />
+              </div>
+            )}
           </div>
         ))}
       </div>

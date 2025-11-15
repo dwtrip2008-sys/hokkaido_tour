@@ -439,6 +439,7 @@ interface ChecklistItem {
   title: string;
   description: string;
   important?: boolean;
+  image?: string; // 선택적 이미지 경로
 }
 
 export const checklistItems: ChecklistItem[] = [
@@ -520,7 +521,8 @@ export const checklistItems: ChecklistItem[] = [
   {
     title: "의류",
     description:
-      "계절에 맞는 복장, 보온성 높은 바지와 티셔츠, 자켓, 내의, 속옷, 모자 등\n• 최저1도 / 최고9도 예상 됩니다.",
+      "계절에 맞는 복장, 보온성 높은 바지와 티셔츠, 자켓, 내의, 속옷, 모자 등",
+    image: "/images/weather.png", // 593x194
   },
   {
     title: "기타",
