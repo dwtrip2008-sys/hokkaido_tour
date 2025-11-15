@@ -117,12 +117,12 @@ export const schedules: ScheduleDay[] = [
     route: "도야 → 노보리베츠 → 삿포로",
     timeline: [
       {
-        time: "09:00",
+        time: "10:00",
         activity:
           "조식 후 가이드미팅/체크아웃\n* 골프팀 : 무로란CC급 18홀 라운딩",
       },
       {
-        time: "09:30",
+        time: "10:30",
         activity: "도야관광\n- 쇼와신잔, 사이로전망대, 도야호유람선",
       },
       {
@@ -151,17 +151,17 @@ export const schedules: ScheduleDay[] = [
     route: "삿포로(시내관광)",
     timeline: [
       {
-        time: "09:30",
+        time: "10:00",
         activity: "조식 후 가이드미팅\n* 골프팀 : 북해도CC급 18홀 라운딩",
       },
       {
-        time: "10:00",
+        time: "10:30",
         activity: "오타루 이동 (1시간)\n- 오르골당, 유리공방, 운하",
       },
       {
         time: "13:00",
         activity:
-          "삿포로 이동 (1시간)\n- 시로이코이비토파크, 오오도리공원, 삿포로맥주박물관\n\n** 자유일정 진행가능 (중식비용 3,000원 현금지급) **",
+          "삿포로 이동 (1시간)\n- 시로이코이비토파크, 오오도리공원, 삿포로맥주박물관\n\n** 자유일정 진행가능 (중식비용 3,000엔 현금지급) **",
       },
       { time: "17:30", activity: "자유일정 및 호텔휴식" },
     ],
@@ -395,7 +395,8 @@ export const attractions: Attraction[] = [
     name: "무로란CC (Muroran Golf Club)",
     type: "golf",
     image: "/revised/attr/muroran-golf-club.jpg",
-    description: "일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장. 고도의 전략성과 아름다운 조형미가 특징입니다.",
+    description:
+      "일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장. 고도의 전략성과 아름다운 조형미가 특징입니다.",
     fullDescription: `무로란CC는 일본 홋카이도 무로란시에 위치한 18홀 회원제 골프장으로, 일본의 유명 골프 코스 설계가 이노우에 세이이치가 설계했습니다.
 
 이곳은 고도의 전략성과 아름다운 조형미가 특징이며, 완만한 경사를 이용한 전략적인 코스와 언덕에 위치하여 섬세한 샷과 기술이 요구되는 곳입니다. 2001년에는 JLPGA 일본 여자 오픈 대회가 열리기도 했습니다.`,
